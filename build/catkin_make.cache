@@ -1,0 +1,2 @@
+data_process_py:nlink_parser:real_structure_vins:utm_to_pose_path:vins_range_opti:vins_range_opti_yaw:vins_to_gps
+-DCATKIN_DEVEL_PREFIX=/home/bbj/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/bbj/catkin_ws/install -G Unix Makefiles

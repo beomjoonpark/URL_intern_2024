@@ -1,0 +1,8 @@
+prefix=/home/bbj/catkin_ws/install
+
+Name: vins_to_gps
+Description: Description of vins_to_gps
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -lvins_to_gps
+Requires: roscpp rospy std_msgs message_generation

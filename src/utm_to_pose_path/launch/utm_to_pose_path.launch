@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <param name ="/enable_altitude" value="True"/>
+  <param name ="/enable_file_write" value="True"/>
+  <param name ="/file_folder" value="$(find utm_to_pose_path)/path_csv"/>
+
+  <node name="utm_to_pose_path_visualizer" pkg="utm_to_pose_path" type="utm_to_pose_path.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/UAV1/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name1" value="/UAV1_gps_pose"/>
+    <param name="out_path_topic_name1" value="/UAV1_gps_path"/>
+    <param name="out_odom_topic_name1" value="/UAV1_gps_odom"/>
+    
+    <param name="input_topic_name2" value="/UAV2/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name2" value="/UAV2_gps_pose"/>
+    <param name="out_path_topic_name2" value="/UAV2_gps_path"/>
+    <param name="out_odom_topic_name2" value="/UAV2_gps_odom"/>
+        
+    <param name="input_topic_name3" value="/UAV3/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name3" value="/UAV3_gps_pose"/>
+    <param name="out_path_topic_name3" value="/UAV3_gps_path"/>
+    <param name="out_odom_topic_name3" value="/UAV3_gps_odom"/>
+    
+    <param name="input_topic_name4" value="/UAV4/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name4" value="/UAV4_gps_pose"/>
+    <param name="out_path_topic_name4" value="/UAV4_gps_path"/>
+    <param name="out_odom_topic_name4" value="/UAV4_gps_odom"/>
+    
+    <param name="input_topic_name5" value="/UAV5/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name5" value="/UAV5_gps_pose"/>
+    <param name="out_path_topic_name5" value="/UAV5_gps_path"/>
+    <param name="out_odom_topic_name5" value="/UAV5_gps_odom"/>
+  </node>
+</launch>

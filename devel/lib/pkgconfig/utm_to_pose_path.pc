@@ -1,0 +1,8 @@
+prefix=/home/bbj/catkin_ws/devel
+
+Name: utm_to_pose_path
+Description: Description of utm_to_pose_path
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

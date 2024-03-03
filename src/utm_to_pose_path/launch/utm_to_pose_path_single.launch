@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <param name ="/enable_altitude" value="True"/>
+  <param name ="/enable_file_write" value="True"/>
+  <param name ="/file_folder" value="$(find utm_to_pose_path)/path_csv"/>
+
+  <node name="utm_to_pose_path_visualizer_single" pkg="utm_to_pose_path" type="utm_to_pose_path_single.py">
+    <param name="parent_frame_id" value="map"/>
+
+    <param name="input_topic_name1" value="/UGV1/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name1" value="/gps_pose"/>
+    <param name="out_path_topic_name1" value="/gps_path"/>
+    
+    <!--param name="input_topic_name2" value="/UAV2/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name2" value="/UAV2_gps_pose"/>
+    <param name="out_path_topic_name2" value="/UAV2_gps_path"/>
+        
+    <param name="input_topic_name3" value="/UAV3/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name3" value="/UAV3_gps_pose"/>
+    <param name="out_path_topic_name3" value="/UAV3_gps_path"/>
+    
+    <param name="input_topic_name4" value="/UAV4/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name4" value="/UAV4_gps_pose"/>
+    <param name="out_path_topic_name4" value="/UAV4_gps_path"/>
+    
+    <param name="input_topic_name5" value="/UAV5/mavros/global_position/raw/fix"/>
+    <param name="out_pose_topic_name5" value="/UAV5_gps_pose"/>
+    <param name="out_path_topic_name5" value="/UAV5_gps_path"/-->
+  </node>
+
+  <node name="gps_rviz" pkg="rviz" type="rviz" output="log" args="-d $(find utm_to_pose_path)/../gps_rviz.rviz"/>
+</launch>

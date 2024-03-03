@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <param name ="/enable_altitude" value="True"/>
+  <param name ="/enable_file_write" value="True"/>
+  <param name ="/file_folder" value="$(find utm_to_pose_path)/path_csv"/>
+
+  <node name="utm_to_pose_path_dreamstep" pkg="utm_to_pose_path" type="plot_pathes_from_pose.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/dreamstep_odom_all"/>
+    <param name="out_pose_topic_name1" value="/dreamstep_odom_odometry"/>
+    <param name="out_path_topic_name1" value="/dreamstep_odom_path"/>
+  </node>
+
+  <node name="utm_to_pose_path_r2live" pkg="utm_to_pose_path" type="plot_pathes_from_pose.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/aft_mapped_to_init"/>
+    <param name="out_pose_topic_name1" value="/r2live_odometry"/>
+    <param name="out_path_topic_name1" value="/r2live_path"/>
+  </node>
+
+  <node name="utm_to_pose_path_lvi_sam" pkg="utm_to_pose_path" type="plot_pathes_from_pose.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/odometry_lvi_sam"/>
+    <param name="out_pose_topic_name1" value="/lvi_sam_odometry"/>
+    <param name="out_path_topic_name1" value="/lvi_sam_path"/>
+  </node>
+
+  <node name="utm_to_pose_path_vins" pkg="utm_to_pose_path" type="plot_pathes_from_pose.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/odometry_vins"/>
+    <param name="out_pose_topic_name1" value="/vins_odometry"/>
+    <param name="out_path_topic_name1" value="/vins_path"/>
+  </node>
+
+  <node name="utm_to_pose_path_GT" pkg="utm_to_pose_path" type="plot_pathes_from_pose.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/gt_nc_park"/>
+    <param name="out_pose_topic_name1" value="/gt_odometry"/>
+    <param name="out_path_topic_name1" value="/gt_path"/>
+  </node>
+</launch>

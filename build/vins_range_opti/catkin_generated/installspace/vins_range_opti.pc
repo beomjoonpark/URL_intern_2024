@@ -1,0 +1,8 @@
+prefix=/home/bbj/catkin_ws/install
+
+Name: vins_range_opti
+Description: Description of vins_range_opti
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -lvins_range_opti
+Requires: roscpp rospy std_msgs message_generation

@@ -1,0 +1,8 @@
+prefix=/home/bbj/catkin_ws/install
+
+Name: data_process_py
+Description: Description of data_process_py
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

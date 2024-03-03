@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <param name ="/enable_altitude" value="True"/>
+  <param name ="/enable_file_write" value="True"/>
+  <param name ="/file_folder" value="$(find utm_to_pose_path)/path_csv"/>
+
+  <node name="utm_to_pose_path_dreamstep" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/dreamstep_odom_all"/>
+    <param name="out_pose_topic_name1" value="/dreamstep_odom_odometry"/>
+    <param name="out_path_topic_name1" value="/dreamstep_odom_path"/>
+    <param name="out_marker_topic_name1" value="/dreamstep_odom_marker"/>
+    <param name="color_pick" value="1"/>
+    <param name="line_width" value="1.0"/>
+    <param name="z_offset" value="2.0"/>
+  </node>
+
+  <node name="utm_to_pose_path_r2live" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/r2live"/>
+    <param name="out_pose_topic_name1" value="/r2live_odometry"/>
+    <param name="out_path_topic_name1" value="/r2live_path"/>
+    <param name="out_marker_topic_name1" value="/r2live_marker"/>
+    <param name="color_pick" value="4"/>
+    <param name="line_width" value="1.0"/>
+    <param name="z_offset" value="2.0"/>
+  </node>
+
+  <node name="utm_to_pose_path_lvi_sam" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/odometry_lvi_sam"/>
+    <param name="out_pose_topic_name1" value="/lvi_sam_odometry"/>
+    <param name="out_path_topic_name1" value="/lvi_sam_path"/>
+    <param name="out_marker_topic_name1" value="/lvi_sam_marker"/>
+    <param name="color_pick" value="6"/>
+    <param name="line_width" value="1.0"/>
+    <param name="z_offset" value="2.0"/>
+  </node>
+
+  <node name="utm_to_pose_path_vins" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/odometry_step"/>
+    <param name="out_pose_topic_name1" value="/vins_odometry"/>
+    <param name="out_path_topic_name1" value="/vins_path"/>
+    <param name="out_marker_topic_name1" value="/vins_marker"/>
+    <param name="color_pick" value="3"/>
+    <param name="line_width" value="1.0"/>
+    <param name="z_offset" value="10.0"/>
+
+  </node>
+
+  <node name="utm_to_pose_path_GT" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/gps_pose"/>
+    <param name="out_pose_topic_name1" value="/gt_odometry"/>
+    <param name="out_path_topic_name1" value="/gt_path"/>
+    <param name="out_marker_topic_name1" value="/gt_marker"/>
+    <param name="color_pick" value="0"/>
+    <param name="line_width" value="2.0"/>
+    <param name="z_offset" value="0.0"/>
+  </node>
+  
+  <node name="utm_to_pose_path_Fast_LIVO" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/aft_mapped_to_init"/>
+    <param name="out_pose_topic_name1" value="/fast_livo_odometry"/>
+    <param name="out_path_topic_name1" value="/fast_livo_path"/>
+    <param name="out_marker_topic_name1" value="/fast_livo_marker"/>
+    <param name="color_pick" value="5"/>
+    <param name="line_width" value="1.0"/>
+    <param name="z_offset" value="2.0"/>
+  </node>
+  <node name="utm_to_pose_path_Fast_LIO" pkg="utm_to_pose_path" type="plot_pathes_from_pose_to_marker.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/fast_lio"/>
+    <param name="out_pose_topic_name1" value="/fast_lio_odometry"/>
+    <param name="out_path_topic_name1" value="/fast_lio_path"/>
+    <param name="out_marker_topic_name1" value="/fast_lio_marker"/>
+    <param name="color_pick" value="7"/>
+    <param name="line_width" value="1.0"/>
+    <param name="z_offset" value="2.0"/>
+  </node>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/bbj/catkin_ws/install
+
+Name: real_structure_vins
+Description: Description of real_structure_vins
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib -lreal_structure_vins
+Requires: message_generation roscpp std_msgs

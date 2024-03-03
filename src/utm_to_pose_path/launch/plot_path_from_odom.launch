@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <param name ="/enable_altitude" value="True"/>
+  <param name ="/enable_file_write" value="True"/>
+  <param name ="/file_folder" value="$(find utm_to_pose_path)/path_csv"/>
+
+  <node name="utm_to_pose_path_r2live" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/r2live"/>
+    <param name="out_pose_topic_name1" value="/r2live_pose"/>
+    <param name="out_path_topic_name1" value="/r2live_path"/>
+  </node>
+
+  <node name="utm_to_pose_path_visualizer" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+
+    <param name="input_topic_name1" value="/r2live/odometry"/>
+    <param name="out_pose_topic_name1" value="/r2live_pose"/>
+    <param name="out_path_topic_name1" value="/r2live_path"/>
+
+  </node>
+</launch>

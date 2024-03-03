@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<launch>
+
+  <param name ="/enable_altitude" value="True"/>
+  <param name ="/enable_file_write" value="False"/>
+  <param name ="/file_folder" value="$(find utm_to_pose_path)/path_csv"/>
+
+  <node name="utm_to_pose_path1" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+    <param name="input_topic_name1" value="/UAV1_vins_estimator/odometry"/>
+    <param name="out_pose_topic_name1" value="/UAV1_vins_estimator/pose"/>
+    <param name="out_path_topic_name1" value="/UAV1_vins_estimator/path"/>
+  </node>
+
+  <node name="utm_to_pose_path2" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+    <param name="input_topic_name1" value="/UAV2_vins_estimator/odometry"/>
+    <param name="out_pose_topic_name1" value="/UAV2_vins_estimator/pose"/>
+    <param name="out_path_topic_name1" value="/UAV2_vins_estimator/path"/>
+  </node>
+
+  <node name="utm_to_pose_path3" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+    <param name="input_topic_name1" value="/UAV3_vins_estimator/odometry"/>
+    <param name="out_pose_topic_name1" value="/UAV3_vins_estimator/pose"/>
+    <param name="out_path_topic_name1" value="/UAV3_vins_estimator/path"/>
+  </node>
+  
+  <node name="utm_to_pose_path4" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+    <param name="input_topic_name1" value="/UAV4_vins_estimator/odometry"/>
+    <param name="out_pose_topic_name1" value="/UAV4_vins_estimator/pose"/>
+    <param name="out_path_topic_name1" value="/UAV4_vins_estimator/path"/>
+  </node>
+
+  <node name="utm_to_pose_path5" pkg="utm_to_pose_path" type="plot_pathes_from_odom.py">
+    <param name="parent_frame_id" value="world"/>
+    <param name="input_topic_name1" value="/UAV5_vins_estimator/odometry"/>
+    <param name="out_pose_topic_name1" value="/UAV5_vins_estimator/pose"/>
+    <param name="out_path_topic_name1" value="/UAV5_vins_estimator/path"/>
+  </node>
+
+
+</launch>
